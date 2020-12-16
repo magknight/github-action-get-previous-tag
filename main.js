@@ -6,10 +6,14 @@ exec(`cd ./mar/`, (err, rev, stderr) => {
         console.log('\x1b[33m%s\x1b[0m', 'Path is broken: ');
         console.log('\x1b[31m%s\x1b[0m', stderr);
         process.exit(1);
+    } else {
+        console.log("passed changing folder")
+        console.log(rev)
+        exec(`ls`, (err, res, stderr) => {
+            console.log('\x1b[33m%s\x1b[0m', res);
+        })
     }
-    exec(`ls`, (err, res, stderr) => {
-        console.log('\x1b[33m%s\x1b[0m', res);
-    })
+
     exec('git rev-list --tags --max-count=1', (err, rev, stderr) => {
         if (err) {
             console.log('\x1b[33m%s\x1b[0m', 'Could not find any revisions because: ');
