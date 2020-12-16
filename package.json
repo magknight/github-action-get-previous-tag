@@ -1,0 +1,16 @@
+{
+    "name": "latest-tag-action",
+    "version": "v2",
+    "description": "",
+    "main": "main.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/magknight/latest-tag-action.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "dependencies": {
+        "@actions/core": "^1.2.4"
+    }
+}
