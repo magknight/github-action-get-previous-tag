@@ -9,7 +9,7 @@ exec(`cd ${core.getInput('path')} && git rev-list --tags --max-count=1`, (err, r
     }
 
     rev = rev.trim()
-    console.log(rev)
+    console.log('\x1b[33m%s\x1b[0m', rev)
     exec(`cd ${core.getInput('path')} && git describe --tags ${rev}`, (err, tag, stderr) => {
         if (err) {
             console.log('\x1b[33m%s\x1b[0m', 'Could not find any tags because: ');
