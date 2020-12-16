@@ -1,7 +1,7 @@
 const { exec } = require('child_process');
 const core = require('@actions/core');
 //${core.getInput('path')}
-exec(`cd ./mar/`, (err, rev, stderr) => {
+exec(`cd ./main/`, (err, rev, stderr) => {
     if (err) {
         console.log('\x1b[33m%s\x1b[0m', 'Path is broken: ');
         console.log('\x1b[31m%s\x1b[0m', stderr);
