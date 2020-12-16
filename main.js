@@ -1,16 +1,15 @@
 const { exec } = require('child_process');
 const core = require('@actions/core');
-//
-// exec(`cd ./main/`, (err, rev, stderr) => {
-//     if (err) {
-//         console.log('\x1b[33m%s\x1b[0m', 'Path is broken: ');
-//         console.log('\x1b[31m%s\x1b[0m', stderr);
-//         process.exit(1);
-//     }
-exec(`ls`, (err, res, stderr) => {
-    console.log('\x1b[33m%s\x1b[0m', res);
-    console.log('\x1b[33m%s\x1b[0m', `cd ${core.getInput('path')}`);
-
+//${core.getInput('path')}
+exec(`cd ./mar/`, (err, rev, stderr) => {
+    if (err) {
+        console.log('\x1b[33m%s\x1b[0m', 'Path is broken: ');
+        console.log('\x1b[31m%s\x1b[0m', stderr);
+        process.exit(1);
+    }
+    exec(`ls`, (err, res, stderr) => {
+        console.log('\x1b[33m%s\x1b[0m', res);
+    })
     exec('git rev-list --tags --max-count=1', (err, rev, stderr) => {
         if (err) {
             console.log('\x1b[33m%s\x1b[0m', 'Could not find any revisions because: ');
