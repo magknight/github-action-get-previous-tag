@@ -3,6 +3,11 @@ description: 'Get the latest tag from git and outputs that for use in other acti
 branding:
   icon: 'tag'
   color: 'gray-dark'
+inputs: 
+  path:
+    description: "Path to Git repository"
+    required: false
+    default: "./"
 outputs:
   tag:
     description: 'Latest tag'
