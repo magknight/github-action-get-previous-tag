@@ -1,16 +1,18 @@
-name: 'Get Latest Tag'
-description: 'Get the latest tag from git and outputs that for use in other actions'
+name: "Get Latest Tag"
+description: "Get the latest tag from git and outputs that for use in other actions"
 branding:
-  icon: 'tag'
-  color: 'gray-dark'
-inputs: 
+  icon: "tag"
+  color: "gray-dark"
+inputs:
   path:
     description: "Path to Git repository"
     required: false
     default: "./"
 outputs:
   tag:
-    description: 'Latest tag'
+    description: "Latest tag"
+  pastTag:
+    description: "Second tag"
 runs:
-  using: 'node12'
-  main: 'main.js'
+  using: "node12"
+  main: "main.js"
