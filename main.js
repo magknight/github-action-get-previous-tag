@@ -1,7 +1,7 @@
 const { exec } = require('child_process');
 const core = require('@actions/core');
 
-exec(`cd ${core.getInput('path')} && git fetch --tags -g -f`, (err, res, stderr) => {
+exec(`cd ${core.getInput('path')} && git fetch --tags -f`, (err, res, stderr) => {
     if (err) {
         console.log('\x1b[33m%s\x1b[0m', `Couldn't fetch`);
         console.log('\x1b[31m%s\x1b[0m', stderr);
